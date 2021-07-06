@@ -5,7 +5,6 @@ import { AppBar, Button, Grid, makeStyles, Toolbar, Typography } from '@material
 
 const NummiBigImg = 'https://www.nummirock.fi/2017/images/Etusivu_tausta_2021_desktop-C.jpg';
 
-
 const useStyles = makeStyles(({
   leftAlign: {
     backgroundColor: "yellow",
@@ -30,6 +29,31 @@ const useStyles = makeStyles(({
   }
 }));
 
+function BandGrid(props) {
+  return (
+    <Grid container justifyContent="center">
+      <Grid item xs={props.xs} style={{ backgroundColor: "blue" }}>
+        item 1
+      </Grid>
+      <Grid item xs={props.xs} style={{ backgroundColor: "red" }}>
+        item 2
+      </Grid>
+      <Grid item xs={props.xs} style={{ backgroundColor: "green" }}>
+        item 3
+      </Grid>
+    </Grid>
+  )
+}
+
+
+function NewsGrid() {
+  return (
+    <Grid container>
+      <Grid item xs={6}> this is news 1</Grid>
+      <Grid item xs={6}> this is news 2</Grid>
+    </Grid>
+  )
+}
 
 function HeaderBar() {
   return (
@@ -51,12 +75,8 @@ function Content() {
       <Grid item className={classes.wallPaperContainer}>
         <img src={NummiBigImg} className={classes.wallPaper} />
       </Grid>
-      <Grid item>
-        bands
-      </Grid>
-      <Grid item>
-        news
-      </Grid>
+      <BandGrid xs={6} />
+      <NewsGrid />
     </Grid>
   )
 }
