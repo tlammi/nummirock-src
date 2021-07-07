@@ -55,11 +55,13 @@ function HeaderBar() {
 function Content() {
   const classes = useStyles();
   return (
-    <Grid container direction="column">
+    <Grid container direction="column" spacing={4}>
       <Grid item className={classes.wallPaperContainer}>
         <img src={NummiBigImg} className={classes.wallPaper} />
       </Grid>
       <BandGrid perLineXs={2} />
+      <BandGrid perLineXs={3} />
+      <BandGrid perLineXs={4} />
       <NewsGrid />
     </Grid>
   )

@@ -9,10 +9,12 @@ import BandEntry from "./BandEntry.js";
 */
 function BandGrid(props) {
     const xs = Math.floor(12 / props.perLineXs);
-    return (<Grid container justifyContent="center">
-        <BandEntry xs={xs} />
-        <BandEntry xs={xs} />
-        <BandEntry xs={xs} />
+    const entries = [];
+    for (let i = 0; i < Math.max(props.perLineXs, 3); ++i) {
+        entries.push(<BandEntry xs={xs} />);
+    }
+    return (<Grid item container justifyContent="center" spacing={4}>
+        {entries}
     </Grid>);
 }
 
