@@ -1,7 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 
 import { AppBar, Button, Grid, makeStyles, Toolbar, Typography } from '@material-ui/core';
+
+import BandGrid from "./components/BandGrid.js";
 
 const NummiBigImg = 'https://www.nummirock.fi/2017/images/Etusivu_tausta_2021_desktop-C.jpg';
 
@@ -28,25 +29,6 @@ const useStyles = makeStyles(({
     },
   }
 }));
-
-function BandGrid(props) {
-  return (
-    <Grid container justifyContent="center">
-      <Grid item xs={props.xs} style={{ backgroundColor: "blue" }}>
-        <div style={{ height: "100px" }}>
-          item 1
-        </div>
-      </Grid>
-      <Grid item xs={props.xs} style={{ backgroundColor: "red" }}>
-        item 2
-      </Grid>
-      <Grid item xs={props.xs} style={{ backgroundColor: "green" }}>
-        item 3
-      </Grid>
-    </Grid>
-  )
-}
-
 
 function NewsGrid() {
   return (
@@ -77,7 +59,7 @@ function Content() {
       <Grid item className={classes.wallPaperContainer}>
         <img src={NummiBigImg} className={classes.wallPaper} />
       </Grid>
-      <BandGrid xs={6} />
+      <BandGrid perLineXs={2} />
       <NewsGrid />
     </Grid>
   )
@@ -104,23 +86,7 @@ function Sections() {
 
 function App() {
   return (
-    <div className="App">
-      <Sections />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Sections />
   );
 }
 
