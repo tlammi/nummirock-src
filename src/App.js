@@ -33,7 +33,9 @@ function BandGrid(props) {
   return (
     <Grid container justifyContent="center">
       <Grid item xs={props.xs} style={{ backgroundColor: "blue" }}>
-        item 1
+        <div style={{ height: "100px" }}>
+          item 1
+        </div>
       </Grid>
       <Grid item xs={props.xs} style={{ backgroundColor: "red" }}>
         item 2
