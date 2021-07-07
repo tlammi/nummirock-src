@@ -74,9 +74,15 @@ function Content() {
       <Grid item className={classes.wallPaperContainer}>
         <img src={NummiBigImg} className={classes.wallPaper} />
       </Grid>
+      <Grid item>
+        <Typography align="center" variant="h1">Ohjelma</Typography>
+      </Grid>
       <BandGrid perLineXs={2} />
       <BandGrid perLineXs={3} />
       <BandGrid perLineXs={4} />
+      <Grid item>
+        <Typography align="center" variant="h1">Uutiset</Typography>
+      </Grid>
       <NewsGrid />
     </Grid>
   )
