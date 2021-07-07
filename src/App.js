@@ -1,6 +1,7 @@
 import './App.css';
 
 import { AppBar, Button, Grid, makeStyles, Toolbar, Typography } from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home';
 
 import BandGrid from "./components/BandGrid.js";
 import ReactMarkdown from 'react-markdown';
@@ -58,7 +59,8 @@ function HeaderBar() {
   return (
     <AppBar position="sticky">
       <Toolbar>
-        <Button>Nummirock</Button>
+        <Button><HomeIcon /></Button>
+        <div style={{ flex: 1 }}></div>
         <Button>Uutiset</Button>
         <Button>Ohjelma</Button>
         <Button>Info</Button>
