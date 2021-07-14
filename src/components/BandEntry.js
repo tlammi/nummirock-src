@@ -25,7 +25,6 @@ const useStyles = makeStyles({
     Represents a band image on the page
 
     props:
-        xs: Relative size of the image, 0-12
         img: image shown in the item. Default is a placeholder
         link: Link where the image points to. A default is used if not specified.
 */
@@ -36,7 +35,8 @@ function BandEntry(props) {
     const delay = props.delay ? props.delay : "0s";
 
     return (
-        <Grid item container justifyContent="center" xs={props.xs}>
+        <Grid item container justifyContent="center"
+            xs={12} sm={6} md={4} lg={3}>
             <a href={link}>
                 <img src={img} style={{ animationDelay: delay }}
                     className={classes.img} alt="Band"
