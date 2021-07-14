@@ -14,13 +14,13 @@ function NewsPreview() {
 
     return (
         <Grid container className={classes.root}>
-            <Grid container xs={1}></Grid>
+            <Grid item xs={1}></Grid>
             <Grid container item xs={10} spacing={2} justifyContent="center">
                 <NewsEntry brief={true} />
                 <NewsEntry brief={true} />
                 <NewsEntry brief={true} />
             </Grid>
-            <Grid xs={1}></Grid>
+            <Grid item xs={1}></Grid>
         </Grid>
     )
 };

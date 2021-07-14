@@ -23,9 +23,13 @@ const useStyles = makeStyles(({
 function LandingSection() {
     const classes = useStyles();
     return (
-        <Grid item className={classes.wallPaperContainer}>
-            <img src={NummiBigImg} className={classes.wallPaper} alt="Nummirock" />
-        </Grid>);
+        <Grid container item className={classes.wallPaperContainer}>
+            <Grid item xs={1}></Grid>
+            <Grid item xs={10}>
+                <img src={NummiBigImg} className={classes.wallPaper} alt="Nummirock" />
+            </Grid>
+            <Grid item xs={1}></Grid>
+        </Grid >);
 }
 
 export default LandingSection;

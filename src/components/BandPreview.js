@@ -13,7 +13,7 @@ function BandPreview() {
     const classes = useStyles();
 
     return (
-        <Grid item container className={classes.root} direction="row">
+        <Grid item container className={classes.root} direction="row" justifyContent="space-between">
             <Grid item xs={1}></Grid>
             <Grid item container xs={10} justifyContent="center" spacing={4}>
                 <BandEntry delay="0.2s"></BandEntry>
