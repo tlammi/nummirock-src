@@ -11,7 +11,7 @@ function BandGrid(props) {
     const xs = Math.floor(12 / props.perLineXs);
     const entries = [];
     for (let i = 0; i < Math.max(props.perLineXs, 3); ++i) {
-        entries.push(<BandEntry xs={xs} />);
+        entries.push(<BandEntry xs={xs} delay={`${i * .2}s`} />);
     }
     return (<Grid item container justifyContent="center" spacing={4}>
         {entries}
