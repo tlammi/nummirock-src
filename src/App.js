@@ -1,62 +1,49 @@
 import './App.css';
 
 import { AppBar, Button, Grid, Toolbar } from '@material-ui/core';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 
 import LandingSection from './components/LandingSection'
 import BandPreview from './components/BandPreview';
 import NewsPreview from './components/NewsPreview';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import Page from './components/Page';
 
-function HeaderBar() {
-  return (
-    <AppBar position="sticky">
-      <Toolbar>
-        <Button><HomeIcon /></Button>
-        <div style={{ flex: 1 }}></div>
-        <Button href="/#/uutiset">Uutiset</Button>
-        <Button href="/#/ohjelma">Ohjelma</Button>
-        <Button href="/#/info">Info</Button>
-      </Toolbar>
-    </AppBar>
-  );
-}
 
 // Left-right alignment
 function HomePage() {
   return (
-    <div>
-      <HeaderBar />
+    <Page>
       <Grid container>
         <LandingSection />
         <BandPreview />
         <NewsPreview />
       </Grid>
-    </div>
+    </Page>
   );
 }
 
 function NewsPage() {
   return (
-    <div>
-      This is news
-    </div>
-  )
+    <Page>
+      this is news
+    </Page>
+  );
 }
 
 function BandsPage() {
   return (
-    <div>
-      This is bands.
-    </div>
+    <Page>
+      thsi is bands
+    </Page>
   );
 }
 
 function InfoPage() {
   return (
-    <div>
-      This is info.
-    </div>
+    <Page>
+      this is info
+    </Page>
   );
 }
 
