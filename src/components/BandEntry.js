@@ -6,10 +6,16 @@ import placeHolder from "../resources/band_placeholder.png";
 const defaultLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1";
 
 const useStyles = makeStyles({
-    img: {
-        maxWidth: "100%",
+    imgWrapper: {
         animation: `$fade-in 1s forwards`,
         opacity: 0,
+    },
+    img: {
+        maxWidth: "100%",
+        "&:hover": {
+            opacity: 0.7,
+            transition: "all 0.1s ease-out",
+        },
     },
     "@keyframes fade-in": {
         "0%": {
@@ -18,7 +24,8 @@ const useStyles = makeStyles({
         "100%": {
             opacity: 1
         }
-    }
+    },
+
 });
 
 /*
@@ -36,7 +43,8 @@ function BandEntry(props) {
 
     return (
         <Grid item container justifyContent="center"
-            xs={12} sm={6} md={4} lg={3}>
+            xs={12} sm={6} md={4} lg={3}
+            className={classes.imgWrapper}>
             <a href={link}>
                 <img src={img} style={{ animationDelay: delay }}
                     className={classes.img} alt="Band"
