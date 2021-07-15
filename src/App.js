@@ -7,6 +7,7 @@ import LandingSection from './components/LandingSection'
 import BandPreview from './components/BandPreview';
 import NewsPreview from './components/NewsPreview';
 import Page from './components/Page';
+import BandGrid from './components/BandGrid';
 
 
 // Left-right alignment
@@ -33,7 +34,7 @@ function NewsPage() {
 function BandsPage() {
   return (
     <Page>
-      thsi is bands
+      <BandGrid />
     </Page>
   );
 }

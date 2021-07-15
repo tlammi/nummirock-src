@@ -35,16 +35,34 @@ const useStyles = makeStyles({
     props:
         img: image shown in the item. Default is a placeholder
         link: Link where the image points to. A default is used if not specified.
+        variant: One of small, mid or big
 */
 function BandEntry(props) {
+    const variant = props.variant ? props.variant : "big";
     const classes = useStyles();
     const link = props.link ? props.link : defaultLink;
     const img = props.img ? props.img : placeHolder;
     const delay = props.delay ? props.delay : "0s";
 
+    const calc_sizes = (v) => {
+        if (v === "small") {
+            return [12, 6, 3];
+        }
+        if (v === "mid") {
+            return [12, 6, 4];
+        }
+        if (v === "big") {
+            return [12, 12, 6];
+        }
+        console.error("Invalid variant " + v);
+        return [12, 12, 6];
+    };
+
+    const [xs, sm, md] = calc_sizes(variant);
+
     return (
         <Grid item container justifyContent="center"
-            xs={12} sm={6} md={4} lg={3}
+            xs={xs} sm={sm} md={md}
             className={classes.imgWrapper}>
             <a href={link}>
                 <img src={img} style={{ animationDelay: delay }}

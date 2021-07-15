@@ -1,5 +1,5 @@
 import { Grid, makeStyles } from "@material-ui/core";
-import { NewsEntry, ExpandableNewsEntry } from "./NewsEntry";
+import { ExpandableNewsEntry } from "./NewsEntry";
 
 const useStyles = makeStyles({
     root: {
