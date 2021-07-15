@@ -27,11 +27,11 @@ function LandingSection() {
     const classes = useStyles();
     return (
         <Grid container item className={classes.wallPaperContainer}>
-            <Grid item xs={0} md={1}></Grid>
+            <Grid item xs={false} md={1}></Grid>
             <Grid item container xs={12} md={10}>
                 <img src={NummiBigImg} className={classes.wallPaper} alt="Nummirock" />
             </Grid>
-            <Grid item xs={0} md={1}></Grid>
+            <Grid item xs={false} md={1}></Grid>
         </Grid >);
 }
 

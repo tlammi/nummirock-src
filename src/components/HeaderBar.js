@@ -1,4 +1,4 @@
-import { AppBar, Button, Icon, Toolbar } from "@material-ui/core"
+import { AppBar, Button, Toolbar } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles";
 
 const nummiLogo = "https://www.nummirock.fi/2017/images/Otsikon_grafiikat_Alasivu_1_2021.png";
@@ -23,7 +23,7 @@ function HeaderBar() {
     const components = texts.map((txt, idx) => {
         const lower = txt.toLowerCase();
         return (
-            <Button
+            <Button key={idx}
                 href={url + "/#/" + lower}
                 className={classes.root}>
                 {txt}
@@ -36,7 +36,7 @@ function HeaderBar() {
                 <Button href={url + "/"}>
                     <img src={nummiLogo} style={{
                         height: "32px"
-                    }} />
+                    }} alt="Home" />
                 </Button>
                 <div style={{ flex: 1 }}></div>
                 {components}

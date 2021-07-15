@@ -1,8 +1,7 @@
 import './App.css';
 
-import { AppBar, Button, Grid, Toolbar } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { HashRouter, Switch, Route } from 'react-router-dom';
-import HomeIcon from '@material-ui/icons/Home';
 
 import LandingSection from './components/LandingSection'
 import BandPreview from './components/BandPreview';
