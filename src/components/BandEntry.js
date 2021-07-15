@@ -12,9 +12,10 @@ const useStyles = makeStyles({
     },
     img: {
         maxWidth: "100%",
+        transition: "all 0.2s ease-out",
         "&:hover": {
             opacity: 0.7,
-            transition: "all 0.1s ease-out",
+            transition: "all 0.2s ease-out",
         },
     },
     "@keyframes fade-in": {
