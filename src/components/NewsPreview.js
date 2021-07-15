@@ -4,7 +4,9 @@ import NewsEntry from "./NewsEntry";
 const useStyles = makeStyles({
     root: {
         backgroundColor: "black",
-        color: "white"
+        color: "white",
+        minHeight: "100vh",
+        alignItems: "center"
     }
 }
 );

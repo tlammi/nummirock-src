@@ -5,6 +5,8 @@ import BandEntry from "./BandEntry";
 const useStyles = makeStyles({
     root: {
         backgroundColor: "black",
+        minHeight: "100vh",
+        alignItems: "center"
     }
 });
 
