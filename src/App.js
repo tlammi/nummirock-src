@@ -49,7 +49,7 @@ function InfoPage() {
 
 function Pages() {
   return (
-    <HashRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/">
           <HomePage />

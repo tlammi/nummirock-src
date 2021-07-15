@@ -4,14 +4,17 @@ import HomeIcon from "@material-ui/icons/Home";
 
 
 function HeaderBar() {
+    // environment variable for overriding the service path
+    const url = process.env.PUBLIC_URL;
+
     return (
         <AppBar position="sticky">
             <Toolbar>
-                <Button href="/"><HomeIcon /></Button>
+                <Button href={url + "/"}><HomeIcon /></Button>
                 <div style={{ flex: 1 }}></div>
-                <Button href="/#/uutiset">Uutiset</Button>
-                <Button href="/#/ohjelma">Ohjelma</Button>
-                <Button href="/#/info">Info</Button>
+                <Button href={url + "/#/uutiset"}>Uutiset</Button>
+                <Button href={url + "/#/ohjelma"}>Ohjelma</Button>
+                <Button href={url + "/#/info"}>Info</Button>
             </Toolbar>
         </AppBar>
     );
