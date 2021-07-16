@@ -13,20 +13,20 @@ function BandGrid(props) {
     for (let i = 0; i < 6; ++i) {
         entries.push(<BandEntry
             img="https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-69eyes.png"
-            key={i} variant="big" delay={`${i * .2}s`}
+            key={i} variant="big" delay={`${i * .05}s`}
         />);
     }
 
     for (let i = 0; i < 6; ++i) {
         entries.push(<BandEntry
             img="https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-69eyes.png"
-            key={i} variant="mid" delay={`${i * .2}s`}
+            key={i} variant="mid" delay={`${(i + 6) * .05}s`}
         />);
     }
     for (let i = 0; i < 6; ++i) {
         entries.push(<BandEntry
             img="https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-69eyes.png"
-            key={i} variant="small" delay={`${i * .2}s`}
+            key={i} variant="small" delay={`${(i + 12) * .05}s`}
         />);
     }
 

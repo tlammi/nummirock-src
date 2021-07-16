@@ -63,9 +63,10 @@ function BandEntry(props) {
     return (
         <Grid item container justifyContent="center"
             xs={xs} sm={sm} md={md}
-            className={classes.imgWrapper}>
+            className={classes.imgWrapper}
+            style={{ animationDelay: delay }}>
             <a href={link}>
-                <img src={img} style={{ animationDelay: delay }}
+                <img src={img}
                     className={classes.img} alt="Band"
                 />
             </a>
