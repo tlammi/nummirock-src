@@ -33,7 +33,7 @@ function HeaderBar() {
     return (
         <AppBar position="sticky" className={classes.root}>
             <Toolbar>
-                <Button href={url + "/"}>
+                <Button href={url + "/#/"}>
                     <img src={nummiLogo} style={{
                         height: "32px"
                     }} alt="Home" />
