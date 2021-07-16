@@ -13,18 +13,21 @@ const useStyles = makeStyles({
 });
 
 function BandPreview() {
+    const MAX_BANDS = 4;
     const classes = useStyles();
     const components = useMemo(() => {
         const bandInfo = fetchBandInfo();
-        var out = [];
-        bandInfo["big"].forEach((item, idx) => {
+        const bands = bandInfo["big"]
+            .concat(bandInfo["mid"]).concat(bandInfo["small"]);
+
+        console.log(bands.slice(0, MAX_BANDS));
+        return bands.slice(0, MAX_BANDS).map((item, idx) => {
             const delay = (0.2 * idx).toString() + "s";
-            out.push(<BandEntry
+            return (<BandEntry
                 key={idx} delay={delay}
                 variant="small" img={item.src}
                 link={item.link} />);
         });
-        return out;
     }, []);
 
     return (
