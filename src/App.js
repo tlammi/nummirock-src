@@ -8,6 +8,8 @@ import BandPreview from './components/BandPreview';
 import NewsPreview from './components/NewsPreview';
 import Page from './components/Page';
 import BandGrid from './components/BandGrid';
+import { Fragment } from 'react';
+import { ScrollToTop } from './util';
 
 
 // Left-right alignment
@@ -50,20 +52,23 @@ function InfoPage() {
 function Pages() {
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
-      <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route exact path="/uutiset">
-          <NewsPage />
-        </Route>
-        <Route exact path="/ohjelma">
-          <BandsPage />
-        </Route>
-        <Route exact path="/info">
-          <InfoPage />
-        </Route>
-      </Switch>
+      <Fragment>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/uutiset">
+            <NewsPage />
+          </Route>
+          <Route exact path="/ohjelma">
+            <BandsPage />
+          </Route>
+          <Route exact path="/info">
+            <InfoPage />
+          </Route>
+        </Switch>
+      </Fragment>
     </HashRouter>
   );
 }
