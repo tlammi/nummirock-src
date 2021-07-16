@@ -75,7 +75,11 @@ function Pages() {
 
 function App() {
   return (
-    <Pages />
+    <div>
+      <link rel="stylesheet"
+        href="https://www.nummirock.fi/2017/fonts.css" type="text/css" />
+      <Pages />
+    </div>
   );
 }
 

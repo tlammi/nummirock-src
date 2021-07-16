@@ -15,6 +15,10 @@ const useStyles = makeStyles({
         animation: `$fade-in 3s forwards`,
         opacity: 0,
     },
+
+    md: {
+        fontFamily: "nummirock_2013_custom_3Rg"
+    },
     "@keyframes fade-in": {
         "0%": {
             opacity: 0
@@ -93,7 +97,7 @@ function ExpandableNewsEntry(props) {
                 animationDelay: delay
             }}>
             <Collapse in={!brief} collapsedSize="145px">
-                <ReactMarkdown>
+                <ReactMarkdown className={classes.md}>
                     {start + end}
                 </ReactMarkdown>
             </Collapse>
