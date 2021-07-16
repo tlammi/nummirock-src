@@ -40,6 +40,18 @@ const BAND_IMAGE_DATA = {
         {
             "src": "https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-RiAsa.png",
             "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        },
+        {
+            "src": "https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-Dimman.png",
+            "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        },
+        {
+            "src": "https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-Pensalenkkarit.png",
+            "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        },
+        {
+            "src": "https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-Instant.png",
+            "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         }
 
     ]
