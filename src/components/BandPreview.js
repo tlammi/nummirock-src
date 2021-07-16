@@ -1,4 +1,6 @@
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
+import { useMemo } from "react";
+import { fetchBandInfo } from "../api/resources";
 import BandEntry from "./BandEntry";
 import HeaderedSection from "./HeaderedSection";
 
@@ -11,18 +13,26 @@ const useStyles = makeStyles({
 });
 
 function BandPreview() {
-
     const classes = useStyles();
+    const components = useMemo(() => {
+        const bandInfo = fetchBandInfo();
+        var out = [];
+        bandInfo["big"].forEach((item, idx) => {
+            const delay = (0.2 * idx).toString() + "s";
+            out.push(<BandEntry
+                key={idx} delay={delay}
+                variant="small" img={item.src}
+                link={item.link} />);
+        });
+        return out;
+    }, []);
 
     return (
         <HeaderedSection header="Ohjelma" className={classes.root}>
             <Grid item container direction="row" justifyContent="space-between">
                 <Grid item xs={1}></Grid>
                 <Grid item container xs={10} justifyContent="center" spacing={4}>
-                    <BandEntry delay="0.2s" variant="small" img="https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-69eyes.png"></BandEntry>
-                    <BandEntry delay="0.4s" variant="small" img="https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-Ensiferum.png"></BandEntry>
-                    <BandEntry delay="0.6s" variant="small" img="https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-FearOfDomination.png"></BandEntry>
-                    <BandEntry delay="0.8s" variant="small" img="https://nummirock.fi/2017/images/bandit_2021/WEB_VIRTUAL-NooraLouhimoExperience.png"></BandEntry>
+                    {components}
                 </Grid>
                 <Grid item xs={1}></Grid>
             </Grid>
