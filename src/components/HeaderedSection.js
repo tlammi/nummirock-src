@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     root: {
         backgroundColor: "black",
         color: "white",
-        minHeight: "80vh"
+        minHeight: "60vh"
     },
     spacer: {
         minHeight: "10vh"
