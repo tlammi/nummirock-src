@@ -65,7 +65,7 @@ function BandEntry(props) {
             xs={xs} sm={sm} md={md}
             className={classes.imgWrapper}
             style={{ animationDelay: delay }}>
-            <a href={link}>
+            <a href={link} target="_blank">
                 <img src={img}
                     className={classes.img} alt="Band"
                 />
