@@ -10,15 +10,31 @@ import Page from './components/Page';
 import BandGrid from './components/BandGrid';
 import { Fragment } from 'react';
 import { ScrollToTop } from './util';
+import { makeStyles } from '@material-ui/styles';
 
+
+
+const useStyles = makeStyles({
+  root: {
+    backgroundColor: "black",
+    color: "white"
+  }
+});
 
 // Left-right alignment
 function HomePage() {
+  const classes = useStyles();
   return (
     <Page>
-      <Grid container>
+      <Grid container direction="column" className={classes.root}>
         <LandingSection />
+        <Grid item style={{
+          minHeight: "10vh"
+        }}></Grid>
         <BandPreview />
+        <Grid item style={{
+          minHeight: "10vh"
+        }}></Grid>
         <NewsPreview />
       </Grid>
     </Page>

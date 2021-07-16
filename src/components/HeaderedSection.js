@@ -1,9 +1,25 @@
 import { Grid, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+
+
+const useStyles = makeStyles({
+    root: {
+        backgroundColor: "black",
+        color: "white",
+        minHeight: "80vh"
+    },
+    spacer: {
+        minHeight: "10vh"
+    }
+});
 
 
 function HeaderedSection(props) {
+    const classes = useStyles();
     return (
-        <Grid item container {...props} direction="column">
+        <Grid item container
+            className={classes.root} direction="column"
+            justifyContent="center">
             <Grid item style={{
                 textAlign: "center"
             }}>
@@ -13,6 +29,7 @@ function HeaderedSection(props) {
                     {props.header}
                 </Typography>
             </Grid>
+            <Grid item className={classes.spacer}></Grid>
             {props.children}
         </Grid>
     );
