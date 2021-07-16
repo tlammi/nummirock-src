@@ -92,7 +92,7 @@ function ExpandableNewsEntry(props) {
         });
 
     return (
-        <Grid item xs={12} sm={6} md={4} lg={3} className={classes.root}
+        <Grid item xs={12} md={6} xl={4} className={classes.root}
             style={{
                 animationDelay: delay
             }}>

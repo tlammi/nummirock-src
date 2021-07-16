@@ -36,6 +36,10 @@ function HomePage() {
           minHeight: "10vh"
         }}></Grid>
         <NewsPreview />
+        {/* Avoid white bar at the bottom of page when news are expanded*/}
+        <Grid item style={{
+          minHeight: "10px"
+        }}></Grid>
       </Grid>
     </Page>
   );
