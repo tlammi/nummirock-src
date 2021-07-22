@@ -13,13 +13,14 @@ const useStyles = makeStyles(theme => ({
     wallPaper: {
         animation: `$fadein 2s`,
         height: "100%",
-        width: "100%",
-        objectFit: "cover",
+        position: "absolute",
+        bottom: 0
     },
     wallPaperText: {
         position: "absolute",
         bottom: "0",
-        height: "40%",
+        maxHeight: "40%",
+        maxWidth: "100%",
         animation: `$fadein 2s forwards`,
         animationDelay: "0.5s",
         opacity: 0
@@ -40,7 +41,7 @@ function LandingSection() {
         <Grid container item className={classes.wallPaperContainer}>
             <Grid item xs={false} md={1}></Grid>
             <Grid item container xs={12} md={10} direction="column" alignItems="center">
-                <Img src={NummiBigImg} className={classes.wallPaper} alt="Nummirock" />
+                <img src={NummiBigImg} className={classes.wallPaper} alt="Nummirock" />
                 <img src={NummiBigTxt} className={classes.wallPaperText} alt="" />
             </Grid>
             <Grid item xs={false} md={1}></Grid>
