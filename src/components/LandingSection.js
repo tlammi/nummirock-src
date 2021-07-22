@@ -13,8 +13,10 @@ const useStyles = makeStyles(theme => ({
     wallPaper: {
         animation: `$fadein 2s`,
         height: "100%",
+        maxWidth: "100%",
         position: "absolute",
-        bottom: 0
+        bottom: 0,
+        objectFit: "cover",
     },
     wallPaperText: {
         position: "absolute",
