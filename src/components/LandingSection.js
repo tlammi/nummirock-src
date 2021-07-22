@@ -20,6 +20,9 @@ const useStyles = makeStyles(theme => ({
         position: "absolute",
         bottom: "0",
         height: "40%",
+        animation: `$fadein 2s forwards`,
+        animationDelay: "0.5s",
+        opacity: 0
     },
     "@keyframes fadein": {
         "0%": {
