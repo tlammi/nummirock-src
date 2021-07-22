@@ -1,11 +1,12 @@
 
-import { Button, Grid, Collapse } from '@material-ui/core';
+import { Button, Collapse } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import newsPlaceholder from '../resources/news_placeholder.md';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import Grid from '../util/Grid';
 
 
 const SHORT_TEXT_LIMIT = 100;

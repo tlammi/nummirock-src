@@ -1,6 +1,7 @@
 
-import { Grid, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import placeHolder from "../resources/band_placeholder.png";
+import Grid from '../util/Grid';
 
 
 const defaultLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1";

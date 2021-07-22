@@ -1,16 +1,12 @@
-import { Grid } from "@material-ui/core";
 import { useMemo } from "react";
 import { fetchBandInfo } from "../api/resources.js";
 import BandEntry from "./BandEntry.js";
+import Grid from '../util/Grid';
 
 /*
     Represent a grid of band images on a page
-
-    props:
-        variant: small, mid or big
 */
-function BandGrid(props) {
-
+function BandGrid() {
 
     const components = useMemo(() => {
         const bands = fetchBandInfo();

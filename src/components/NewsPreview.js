@@ -1,6 +1,7 @@
-import { Grid, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import HeaderedSection from "./HeaderedSection";
 import { ExpandableNewsEntry } from "./NewsEntry";
+import Grid from '../util/Grid';
 
 const useStyles = makeStyles({
     root: {

@@ -1,8 +1,8 @@
-import { Grid } from "@material-ui/core";
 import { useMemo } from "react";
 import { fetchBandInfo } from "../api/resources";
 import BandEntry from "./BandEntry";
 import HeaderedSection from "./HeaderedSection";
+import Grid from '../util/Grid';
 
 function BandPreview() {
     const MAX_BANDS = 4;
