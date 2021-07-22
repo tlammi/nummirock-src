@@ -10,14 +10,14 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 const SHORT_TEXT_LIMIT = 100;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
         animation: `$fade-in 3s forwards`,
         opacity: 0,
+        color: theme.palette.text.primary,
     },
-
-    md: {
-        fontFamily: "nummirock_2013_custom_3Rg"
+    collapseButton: {
+        color: theme.palette.text.primary,
     },
     "@keyframes fade-in": {
         "0%": {
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
             opacity: 1
         }
     },
-});
+}));
 
 /**
  * Represents a news entry in the HTML.
@@ -97,12 +97,12 @@ function ExpandableNewsEntry(props) {
                 animationDelay: delay
             }}>
             <Collapse in={!brief} collapsedSize="145px">
-                <ReactMarkdown className={classes.md}>
+                <ReactMarkdown>
                     {start + end}
                 </ReactMarkdown>
             </Collapse>
             <Button onClick={() => setBrief(!brief)}
-                style={{ color: "white" }}>{buttonIcon}</Button>
+                className={classes.collapseButton}>{buttonIcon}</Button>
         </Grid>
     );
 };

@@ -1,10 +1,17 @@
 
+import { makeStyles } from '@material-ui/styles';
 import HeaderBar from './HeaderBar';
 
+const useStyles = makeStyles(theme => ({
+    root: {
+        backgroundColor: theme.palette.background,
+    }
+}));
 
 function Page(props) {
+    const classes = useStyles();
     return (
-        <div>
+        <div className={classes.root}>
             <HeaderBar />
             {props.children}
         </div>

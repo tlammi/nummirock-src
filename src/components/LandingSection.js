@@ -1,11 +1,14 @@
-import { Grid, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
+import Grid from '../util/Grid';
+import Img from '../util/Img';
 
 const NummiBigImg = 'https://www.nummirock.fi/2017/images/Etusivu_tausta_2021_desktop-C.jpg';
 
-const useStyles = makeStyles(({
+const useStyles = makeStyles(theme => ({
     wallPaperContainer: {
-        backgroundColor: "black",
         height: "100vh",
+        backgroundColor: theme.palette.background
+
     },
     wallPaper: {
         animation: `$fadein 2s`,
@@ -29,7 +32,7 @@ function LandingSection() {
         <Grid container item className={classes.wallPaperContainer}>
             <Grid item xs={false} md={1}></Grid>
             <Grid item container xs={12} md={10}>
-                <img src={NummiBigImg} className={classes.wallPaper} alt="Nummirock" />
+                <Img src={NummiBigImg} className={classes.wallPaper} alt="Nummirock" />
             </Grid>
             <Grid item xs={false} md={1}></Grid>
         </Grid >);

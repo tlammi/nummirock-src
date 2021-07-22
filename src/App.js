@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Grid } from '@material-ui/core';
+import { createTheme, Grid } from '@material-ui/core';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import LandingSection from './components/LandingSection'
@@ -10,23 +10,26 @@ import Page from './components/Page';
 import BandGrid from './components/BandGrid';
 import { Fragment } from 'react';
 import { ScrollToTop } from './util';
-import { makeStyles } from '@material-ui/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
-
-
-const useStyles = makeStyles({
-  root: {
-    backgroundColor: "black",
-    color: "white"
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "rgb(0, 0, 0)",
+      contrastText: "rgb(255, 255, 255)"
+    },
+    text: {
+      primary: "rgb(255, 255, 255)",
+    },
+    background: "black"
   }
 });
 
 // Left-right alignment
 function HomePage() {
-  const classes = useStyles();
   return (
     <Page>
-      <Grid container direction="column" className={classes.root}>
+      <Grid container direction="column">
         <LandingSection />
         <Grid item style={{
           minHeight: "10vh"
@@ -98,7 +101,9 @@ function App() {
     <div>
       <link rel="stylesheet"
         href="https://www.nummirock.fi/2017/fonts.css" type="text/css" />
-      <Pages />
+      <ThemeProvider theme={theme}>
+        <Pages />
+      </ThemeProvider>
     </div>
   );
 }

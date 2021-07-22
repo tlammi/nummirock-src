@@ -2,16 +2,15 @@ import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
-        backgroundColor: "black",
-        color: "white",
-        minHeight: "60vh"
+        minHeight: "60vh",
+        color: theme.palette.text.primary,
     },
     spacer: {
         minHeight: "10vh"
     }
-});
+}));
 
 
 function HeaderedSection(props) {

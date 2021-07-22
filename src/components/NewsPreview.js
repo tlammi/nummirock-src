@@ -4,8 +4,6 @@ import { ExpandableNewsEntry } from "./NewsEntry";
 
 const useStyles = makeStyles({
     root: {
-        backgroundColor: "black",
-        color: "white",
         minHeight: "100vh",
     }
 }
