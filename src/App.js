@@ -16,13 +16,14 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "rgb(0, 0, 0)",
+      light: "rgb(30, 30, 30)",
       contrastText: "rgb(255, 255, 255)"
     },
     text: {
       primary: "rgb(255, 255, 255)",
     },
     background: "black"
-  }
+  },
 });
 
 // Left-right alignment
