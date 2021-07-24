@@ -50,7 +50,7 @@ function HeaderBar() {
                     }}
                     className={classes.button}
                     underline="none"
-                    to={lower}>
+                    to={"/" + lower}>
                     <Typography variant="h6">
                         {txt}
                     </Typography>
@@ -95,7 +95,7 @@ function HeaderBar() {
         <AppBar position="sticky">
             <Toolbar>
                 <MenuItem>
-                    <Link className={classes.button} underline="none" to="/">
+                    <Link className={classes.button} underline="none" to="">
                         <img src={nummiLogo} style={{
                             height: "32px"
                         }} alt="Home">
