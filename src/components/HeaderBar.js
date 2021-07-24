@@ -16,15 +16,6 @@ const useStyles = makeStyles(theme => ({
     button: {
         height: "100%",
         width: "100%",
-        borderRadius: "0px",
-        backgroundColor: "inherit",
-        '&:hover': {
-            backgroundColor: "inherit"
-        },
-        '&:click': {
-            backgroundColor: "inherit"
-        },
-        transition: "none"
     }
 }));
 function HeaderBar() {
