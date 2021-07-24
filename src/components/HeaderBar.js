@@ -41,7 +41,7 @@ function HeaderBar() {
 
     const theme = useTheme();
     const classes = useStyles();
-    const bigScreen = useMediaQuery(theme.breakpoints.up('md'));
+    const bigScreen = useMediaQuery(theme.breakpoints.up('sm'));
     const handleOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -105,11 +105,15 @@ function HeaderBar() {
     return (
         <AppBar position="sticky">
             <Toolbar>
-                <Button href={url + "/#/"}>
-                    <img src={nummiLogo} style={{
-                        height: "32px"
-                    }} alt="Home" />
-                </Button>
+                <MenuItem>
+                    <Link className={classes.button} underline="none" to={url}>
+                        <img src={nummiLogo} style={{
+                            height: "32px"
+                        }} alt="Home">
+
+                        </img>
+                    </Link>
+                </MenuItem>
                 <div style={{ flex: 1 }}></div>
                 {buttons}
             </Toolbar>
