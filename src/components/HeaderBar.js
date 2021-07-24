@@ -21,8 +21,6 @@ const useStyles = makeStyles(theme => ({
 function HeaderBar() {
 
     const [anchorEl, setAnchorEl] = useState(null);
-    // environment variable for overriding the service path
-    const url = process.env.PUBLIC_URL;
 
     const texts = [
         "Uutiset",
@@ -52,7 +50,7 @@ function HeaderBar() {
                     }}
                     className={classes.button}
                     underline="none"
-                    to={url + lower}>
+                    to={lower}>
                     <Typography variant="h6">
                         {txt}
                     </Typography>
@@ -97,7 +95,7 @@ function HeaderBar() {
         <AppBar position="sticky">
             <Toolbar>
                 <MenuItem>
-                    <Link className={classes.button} underline="none" to={url}>
+                    <Link className={classes.button} underline="none" to="/">
                         <img src={nummiLogo} style={{
                             height: "32px"
                         }} alt="Home">
