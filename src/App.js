@@ -11,7 +11,6 @@ import BandGrid from './components/BandGrid';
 import { Fragment } from 'react';
 import { ScrollToTop } from './util';
 import { ThemeProvider } from '@material-ui/styles';
-import { createBrowserHistory } from 'history';
 
 const theme = createTheme({
   palette: {
@@ -75,15 +74,8 @@ function InfoPage() {
 }
 
 function Pages() {
-
-
-  const history = createBrowserHistory({
-    basename: process.env.PUBLIC_URL + "/#/"
-  }
-  );
-
   return (
-    <Router history={history}>
+    <Router>
       <Fragment>
         <ScrollToTop />
         <Switch>
@@ -108,8 +100,6 @@ function Pages() {
 function App() {
   return (
     <div>
-      <link rel="stylesheet"
-        href="https://www.nummirock.fi/2017/fonts.css" type="text/css" />
       <ThemeProvider theme={theme}>
         <Pages />
       </ThemeProvider>

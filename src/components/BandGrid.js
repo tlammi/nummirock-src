@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchBandInfo } from "../api/resources.js";
 import BandEntry from "./BandEntry.js";
 import Grid from '../util/Grid';

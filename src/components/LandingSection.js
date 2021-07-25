@@ -1,6 +1,5 @@
 import { makeStyles } from "@material-ui/core";
 import Grid from '../util/Grid';
-import Img from '../util/Img';
 
 const NummiBigImg = 'https://www.nummirock.fi/2017/images/Etusivu_tausta_2021_desktop-C.jpg';
 const NummiBigTxt = 'https://nummirock.fi/2017/images/otsikko-PVM-levea-2021C.png';

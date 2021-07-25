@@ -2,7 +2,6 @@ import { AppBar, Button, Menu, MenuItem, Toolbar, Typography, useMediaQuery, use
 import { useState } from "react";
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from "@material-ui/styles";
-import { Link } from "react-router-dom";
 import InternalLink from "./InternalLink";
 
 const nummiLogo = "https://www.nummirock.fi/2017/images/Otsikon_grafiikat_Alasivu_1_2021.png";
@@ -41,8 +40,9 @@ function HeaderBar() {
         const lower = txt.toLowerCase();
         return (
             <InternalLink
+                key={idx}
                 to={lower}>
-                <MenuItem key={idx} className={classes.root}>
+                <MenuItem className={classes.root}>
                     <Typography variant="h6">
                         {txt}
                     </Typography>
