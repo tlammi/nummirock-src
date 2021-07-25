@@ -1,24 +1,25 @@
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { fetchBandInfo } from "../api/resources";
 import BandEntry from "./BandEntry";
 import HeaderedSection from "./HeaderedSection";
 import Grid from '../util/Grid';
 
-function BandPreview() {
-    const MAX_BANDS = 4;
-    const components = useMemo(() => {
-        const bandInfo = fetchBandInfo();
-        const bands = bandInfo["big"]
-            .concat(bandInfo["mid"]).concat(bandInfo["small"]);
 
-        return bands.slice(0, MAX_BANDS).map((item, idx) => {
-            const delay = (0.2 * idx).toString() + "s";
-            return (<BandEntry
-                key={idx} delay={delay}
-                variant="small" img={item.src}
-                link={item.link} />);
-        });
-    }, []);
+function parseBandInfo(bands) {
+    const MAX_BANDS = 4;
+    const joined = bands["big"].concat(bands["mid"]).concat(bands["small"]);
+    return joined.slice(0, MAX_BANDS).map((item, idx) => {
+        const delay = (0.2 * idx).toString() + "s";
+        return (<BandEntry
+            key={idx} delay={delay}
+            variant="small" img={item.src}
+        ></BandEntry>)
+    });
+}
+
+function BandPreview() {
+    const [components, setComponents] = useState();
+    useEffect(() => fetchBandInfo().then(bands => setComponents(parseBandInfo(bands))), []);
 
     return (
         <HeaderedSection header="Ohjelma">

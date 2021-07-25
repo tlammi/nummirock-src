@@ -1,7 +1,7 @@
 
 import { Button, Collapse } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import newsPlaceholder from '../resources/news_placeholder.md';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -45,9 +45,9 @@ function NewsEntry(props) {
 
     const classes = useStyles();
 
-    fetch(url)
+    useEffect(() => fetch(url)
         .then(r => r.text())
-        .then(text => setMd(text));
+        .then(text => setMd(text)), [url]);
 
     return (
         <Grid item xs={12} sm={6} md={4} lg={3} className={classes.root}
@@ -84,13 +84,13 @@ function ExpandableNewsEntry(props) {
     const classes = useStyles();
     const buttonIcon = (brief ? <ExpandMoreIcon /> : <ExpandLessIcon />);
 
-    fetch(url)
+    useEffect(() => fetch(url)
         .then(r => r.text())
         .then(text => {
             const [a, b] = split(text);
             setStart(a);
             setEnd(b);
-        });
+        }), [url]);
 
     return (
         <Grid item xs={12} md={6} xl={4} className={classes.root}

@@ -1,27 +1,27 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { fetchBandInfo } from "../api/resources.js";
 import BandEntry from "./BandEntry.js";
 import Grid from '../util/Grid';
+
+
+function parseBandInfo(info) {
+    var bands = [];
+    ["big", "mid", "small"].forEach(size => {
+        info[size].forEach((item, idx) => {
+            bands.push(<BandEntry key={idx} img={item.src} link={item.link} variant={size}
+                delay={`${idx * .05}s`} />)
+        });
+    });
+    return bands;
+}
 
 /*
     Represent a grid of band images on a page
 */
 function BandGrid() {
 
-    const components = useMemo(() => {
-        const bands = fetchBandInfo();
-        var out = [];
-
-        ["big", "mid", "small"].forEach((size) => {
-
-            bands[size].forEach((item, idx) => {
-                out.push(<BandEntry key={idx} img={item.src} link={item.link} variant={size}
-                    delay={`${idx * .05}s`} />)
-            });
-        });
-
-        return out;
-    });
+    const [components, setComponents] = useState();
+    useEffect(() => fetchBandInfo().then(bands => setComponents(parseBandInfo(bands))), []);
 
     return (
         <Grid container item direction="row" style={{
