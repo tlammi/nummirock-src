@@ -7,7 +7,7 @@ import { ExpandableNewsEntry } from "./NewsEntry";
 function parseNews(news) {
     var components = [];
     news.forEach((item, idx) => {
-        components.push(<ExpandableNewsEntry key={idx} url={item} delay={(idx + 1) * 0.2 + "s"} />);
+        components.push(<ExpandableNewsEntry key={idx} url={item} delay={(idx) * 0.1 + "s"} />);
     });
     return components;
 }
