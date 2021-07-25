@@ -53,7 +53,11 @@ function HomePage() {
 function NewsPage() {
   return (
     <Page>
-      <NewsGrid />
+      <Grid container>
+        <Grid item xs={1}></Grid>
+        <NewsGrid />
+        <Grid item xs={1}></Grid>
+      </Grid>
     </Page>
   );
 }
