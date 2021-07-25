@@ -40,14 +40,14 @@ function HeaderBar() {
     const components = texts.map((txt, idx) => {
         const lower = txt.toLowerCase();
         return (
-            <MenuItem key={idx} className={classes.root}>
-                <InternalLink
-                    to={lower}>
+            <InternalLink
+                to={lower}>
+                <MenuItem key={idx} className={classes.root}>
                     <Typography variant="h6">
                         {txt}
                     </Typography>
-                </InternalLink>
-            </MenuItem>
+                </MenuItem>
+            </InternalLink>
         );
     });
 
@@ -85,14 +85,14 @@ function HeaderBar() {
     return (
         <AppBar position="sticky">
             <Toolbar>
-                <MenuItem>
-                    <InternalLink to="">
+                <InternalLink to="">
+                    <MenuItem>
                         <img src={nummiLogo} style={{
                             height: "32px"
                         }} alt="Home">
                         </img>
-                    </InternalLink>
-                </MenuItem>
+                    </MenuItem>
+                </InternalLink>
                 <div style={{ flex: 1 }}></div>
                 {buttons}
             </Toolbar>
