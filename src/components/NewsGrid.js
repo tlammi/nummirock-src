@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { fetchNewsInfo, useNewsInfo } from "../api/resources";
+import { useEffect, useState } from "react";
+import { fetchNewsInfo } from "../api/resources";
 import Grid from "../util/Grid";
 import { ExpandableNewsEntry } from "./NewsEntry";
 
@@ -25,7 +25,7 @@ function NewsGrid(props) {
             fetchNewsInfo().then(n => setNews(parseNews(n)));
         else
             fetchNewsInfo().then(n => setNews(parseNews(n.slice(0, props.no))));
-    }, []);
+    }, [props.no]);
 
     return (
         <Grid container item xs={10} spacing={2} justifyContent="center">
