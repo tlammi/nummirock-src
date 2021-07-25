@@ -1,7 +1,7 @@
 import './App.css';
 
 import { createTheme, Grid } from '@material-ui/core';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import LandingSection from './components/LandingSection'
 import BandPreview from './components/BandPreview';
@@ -11,6 +11,7 @@ import BandGrid from './components/BandGrid';
 import { Fragment } from 'react';
 import { ScrollToTop } from './util';
 import { ThemeProvider } from '@material-ui/styles';
+import { createBrowserHistory } from 'history';
 
 const theme = createTheme({
   palette: {
@@ -74,8 +75,15 @@ function InfoPage() {
 }
 
 function Pages() {
+
+
+  const history = createBrowserHistory({
+    basename: process.env.PUBLIC_URL + "/#/"
+  }
+  );
+
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <Router history={history}>
       <Fragment>
         <ScrollToTop />
         <Switch>
@@ -93,7 +101,7 @@ function Pages() {
           </Route>
         </Switch>
       </Fragment>
-    </HashRouter>
+    </Router>
   );
 }
 
