@@ -8,7 +8,7 @@ function parseBandInfo(info) {
     var bands = [];
     ["big", "mid", "small"].forEach(size => {
         info[size].forEach((item, idx) => {
-            bands.push(<BandEntry key={idx} img={item.src} link={item.link} variant={size}
+            bands.push(<BandEntry key={idx + size} img={item.src} link={item.link} variant={size}
                 delay={`${idx * .05}s`} />)
         });
     });
@@ -27,11 +27,11 @@ function BandGrid() {
         <Grid container item direction="row" style={{
             backgroundColor: "black"
         }}>
-            <Grid xs={false} md={1} lg={2} />
+            <Grid item xs={false} md={1} lg={2} />
             <Grid xs={12} md={10} lg={8} item container justifyContent="center" spacing={4}>
                 {components}
             </Grid>
-            <Grid xs={false} md={1} lg={2} />
+            <Grid item xs={false} md={1} lg={2} />
         </Grid>
     );
 }

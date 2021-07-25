@@ -11,6 +11,7 @@ import BandGrid from './components/BandGrid';
 import { Fragment } from 'react';
 import { ScrollToTop } from './util';
 import { ThemeProvider } from '@material-ui/styles';
+import NewsGrid from './components/NewsGrid';
 
 const theme = createTheme({
   palette: {
@@ -52,7 +53,7 @@ function HomePage() {
 function NewsPage() {
   return (
     <Page>
-      this is news
+      <NewsGrid />
     </Page>
   );
 }
