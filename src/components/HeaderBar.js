@@ -3,6 +3,7 @@ import { useState } from "react";
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from "@material-ui/styles";
 import { Link } from "react-router-dom";
+import InternalLink from "./InternalLink";
 
 const nummiLogo = "https://www.nummirock.fi/2017/images/Otsikon_grafiikat_Alasivu_1_2021.png";
 
@@ -12,12 +13,9 @@ const useStyles = makeStyles(theme => ({
         '&:hover': {
             background: theme.palette.primary.light,
         }
-    },
-    button: {
-        height: "100%",
-        width: "100%",
     }
 }));
+
 function HeaderBar() {
 
     const [anchorEl, setAnchorEl] = useState(null);
@@ -43,18 +41,12 @@ function HeaderBar() {
         const lower = txt.toLowerCase();
         return (
             <MenuItem key={idx} className={classes.root}>
-                <Link
-                    style={{
-                        textDecoration: "none",
-                        color: "white"
-                    }}
-                    className={classes.button}
-                    underline="none"
-                    to={"/" + lower}>
+                <InternalLink
+                    to={lower}>
                     <Typography variant="h6">
                         {txt}
                     </Typography>
-                </Link>
+                </InternalLink>
             </MenuItem>
         );
     });
@@ -76,7 +68,6 @@ function HeaderBar() {
                         transformOrigin={{
                             vertical: "top",
                             horizontal: "center"
-
                         }}
                         anchorEl={anchorEl}
                         keepMounted
@@ -95,13 +86,12 @@ function HeaderBar() {
         <AppBar position="sticky">
             <Toolbar>
                 <MenuItem>
-                    <Link className={classes.button} underline="none" to="">
+                    <InternalLink to="">
                         <img src={nummiLogo} style={{
                             height: "32px"
                         }} alt="Home">
-
                         </img>
-                    </Link>
+                    </InternalLink>
                 </MenuItem>
                 <div style={{ flex: 1 }}></div>
                 {buttons}
